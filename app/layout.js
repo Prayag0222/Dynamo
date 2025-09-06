@@ -1,6 +1,7 @@
 
 import { Geist, Geist_Mono, Orbitron, Electrolize } from "next/font/google";
 import "./globals.css";
+import LenisProvider from "../components/LenisProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,9 +35,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${electrolize.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${electrolize.variable} antialiased overflow-x-hidden`}
       >
-        {children}
+        <LenisProvider>
+          {children}
+        </LenisProvider>
       </body>
     </html>
   );

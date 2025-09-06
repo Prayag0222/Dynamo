@@ -1,8 +1,7 @@
 'use client'
 import React, { useRef } from 'react'
-import { TextScroll } from '@/components/ui/text-scroll'
 import {  Michroma } from "next/font/google";
-import heroImg from "../assets/Images/hero2.jpg"
+import heroImg from "../assets/Images/hero2.webp"
 import MaskedDiv from '@/components/ui/masked-div';
 import { easeOut, motion, useInView } from "framer-motion"; 
 
@@ -13,47 +12,38 @@ const michroma = Michroma({ subsets: ["latin"], weight: ['400'] });
 
 
 const Hero2 = () => {
+  // Title
+  const refTitle = useRef(null);
+  const inViewTitle = useInView(refTitle, { amount: 0.3, once: true });
+
   // Row 1
   const refV1 = useRef(null);
-  const inViewV1 = useInView(refV1, { amount: 0.2, once: false });
+  const inViewV1 = useInView(refV1, { amount: 0.2, once: true });
   const refT1 = useRef(null);
-  const inViewT1 = useInView(refT1, { amount: 0.4, once: false });
+  const inViewT1 = useInView(refT1, { amount: 0.4, once: true });
 
   // Row 2
   const refV2 = useRef(null);
-  const inViewV2 = useInView(refV2, { amount: 0.2, once: false });
+  const inViewV2 = useInView(refV2, { amount: 0.2, once: true });
   const refT2 = useRef(null);
-  const inViewT2 = useInView(refT2, { amount: 0.3, once: false });
+  const inViewT2 = useInView(refT2, { amount: 0.3, once: true });
 
   // Row 3
   const refV3 = useRef(null);
-  const inViewV3 = useInView(refV3, { amount: 0.2, once: false });
+  const inViewV3 = useInView(refV3, { amount: 0.2, once: true });
   const refT3 = useRef(null);
-  const inViewT3 = useInView(refT3, { amount: 0.3, once: false });
+  const inViewT3 = useInView(refT3, { amount: 0.3, once: true });
 
   // Row 4
   const refV4 = useRef(null);
-  const inViewV4 = useInView(refV4, { amount: 0.2, once: false });
+  const inViewV4 = useInView(refV4, { amount: 0.2, once: true });
   const refT4 = useRef(null);
-  const inViewT4 = useInView(refT4, { amount: 0.3, once: false });
+  const inViewT4 = useInView(refT4, { amount: 0.3, once: true });
 
   return (
     <div>
-     
-        <div>
-        <div className=' bg-[#00040B] py-5'>
-        <TextScroll
-        className={`${michroma.className} font-display text-center text-4xl font-semibold tracking-tighter text-gray-100 dark:text-white md:text-5xl md:leading-[5rem] pb-4`}
-        text="Dynamo.EV"
-        default_velocity={2} />
-    </div>
-        </div>
+      <div className="relative max-w-full ">
         
-
-        
-        
-       
-        <div className="relative max-w-full ">
           <div className="absolute inset-0 -z-10">
             <img
               src={heroImg.src ? heroImg.src : heroImg}
@@ -63,10 +53,38 @@ const Hero2 = () => {
             />
             <div className="absolute inset-0 bg-black/50" />
           </div>
-          <div className="mx-auto max-w-6xl flex flex-col gap-40 px-4 py-10">
+
+
+          
+
+
+          <div className="mx-auto max-w-6xl flex flex-col gap-40 px-4 py-10 ">
+
+
+        <div className='flex mx-[-140px] gap-10 items-center '>
+
+              <motion.div
+               ref={refTitle}
+               initial={{ opacity: 0, y: -50 }}
+               animate={inViewTitle ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
+               transition={{ duration: 1, ease: "easeOut" }}
+              
+              className='bg-white h-8 w-10 rounded-full '></motion.div>
+            {/* Title Overlay */}
+            <motion.h1
+              ref={refTitle}
+              initial={{ opacity: 0, y: -50 }}
+              animate={inViewTitle ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className={`${michroma.className} font-display  text-start text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-cyan-200 md:text-6xl md:leading-[4rem] lg:text-5xl lg:leading-[4rem] drop-shadow-2xl z-10 relative`}
+            >
+              Engineered for Your World.
+            </motion.h1>
+            </div>
             <div className="flex flex-col items-center gap-6 md:flex-row-reverse">
              
 
+            
 
 
 
@@ -232,6 +250,12 @@ const Hero2 = () => {
             </div>
           </div>
         </div>
+       
+
+
+
+        
+       
        
     </div>
   )

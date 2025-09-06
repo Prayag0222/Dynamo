@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import heroImg from '../assets/Images/hero.jpg'
+import heroImg from '../assets/Images/hero.webp'
 import {Roboto_Mono} from 'next/font/google'
 import WrapButton from '@/components/ui/wrap-button'
 import FlipLink from '@/components/ui/text-effect-flipper'
@@ -14,7 +14,7 @@ const Hero = () => {
         <div className="relative overflow-hidden object-cover w-full h-screen ">
             <Image src={heroImg} alt="" fill className="object-cover" priority />
             {/* Black overlay */}
-            <div className="absolute inset-0 bg-black opacity-55"></div>
+            <div className="absolute inset-0 bg-black opacity-35"></div>
             <motion.div
 
               initial={{opacity:0,X:100}}
@@ -35,10 +35,23 @@ const Hero = () => {
 
               className="absolute top-0 right-0 h-full w-1/2 pointer-events-none"
               style={{
-                background: "linear-gradient(to left, rgba(0,123,255,0.25) 0%, rgba(0,123,255,0.12) 20%, rgba(0,123,255,0.02) 50%, rgba(0,123,255,0) 100%)",
+                background: "linear-gradient(to left, rgba(0,123,255,0.25) 0%, rgba(0,123,255,0.12) 20%, rgba(0,123,255,0.01) 40%, rgba(0,123,255,0) 100%)",
                 zIndex: 1,
               }}
             ></motion.div>
+
+                {/* lower gradient */}
+                       <div
+
+
+                    className="absolute bottom-0 right-0 h-1/4 w-full pointer-events-none"
+                    style={{
+                      background: "linear-gradient(to bottom, rgba(0,5,14,0) 0%, rgba(0,5,14,0) 00%, rgba(0,5,14,0) , rgba(0,5,14,1) 100%)",
+                      zIndex: 1,
+                    }}
+                    ></div>
+
+
             <motion.h1
             initial={{opacity:0,x:-200}}
             animate={{ 
@@ -48,7 +61,7 @@ const Hero = () => {
             }}
             transition={{duration:2,ease:"easeInOut",delay:1}}
             
-                className="font-bold text-7xl md:text-8xl w-full text-[#ffffff] absolute bottom-[20%] left-[75%] transform -translate-x-1/2 -translate-y-1/2 text-center drop-shadow-[0_20px_50px_rgba(0,0,0,10)]">
+                className="font-bold text-7xl md:text-8xl w-full text-[#ffffff] absolute bottom-[20%] left-[75%] transform -translate-x-1/2 -translate-y-1/2 text-center drop-shadow-[10px_10px_10px_rgba(0,0,0,10)] ">
                  is Electric
             </motion.h1>
               <motion.h1
@@ -60,7 +73,7 @@ const Hero = () => {
               }}
               transition={{duration:2,ease:"easeInOut"}}
               
-                  className="font-bold text-7xl md:text-8xl w-full text-[#ffffff] absolute bottom-[35%] left-[30%]  transform -translate-x-1/2 -translate-y-1/2 text-center drop-shadow-[0_20px_50px_rgba(0,0,0,10)]">
+                  className="font-bold text-7xl md:text-8xl w-full text-[#ffffff] absolute bottom-[35%] left-[30%]  transform -translate-x-1/2 -translate-y-1/2 text-center drop-shadow-[10px_10px_10px_rgba(0,0,0,10)]">
                   The Future 
               </motion.h1>
 {/*     

@@ -124,6 +124,23 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Lenis smooth scrolling styles */
+  html {
+    scroll-behavior: auto;
+  }
+  
+  html.lenis {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
 }
 
 /* Map Next.js font variables to utility classes */
@@ -137,4 +154,9 @@
   font-family: var(--font-electrolize), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Custom radial gradient for headlight glow */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
 }
