@@ -1,8 +1,9 @@
 import React from 'react'
-import Navbar from '../component/navbar/Navbar.jsx'
+import Navbar from '../components/navbar/Navbar.jsx'
 import Hero from '../pages/Hero'
 import Hero2 from '../pages/Hero2'
 import Hero3 from '@/pages/Hero3.jsx'
+import Footer from '@/components/footer/Footer.jsx'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Hero/>
         <Hero2/>
         <Hero3/>
+        <Footer/>
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 
 import { Geist, Geist_Mono, Orbitron, Electrolize } from "next/font/google";
 import "./globals.css";
-import LenisProvider from "../components/LenisProvider";
+import LenisProvider from "../components/lenis/LenisProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
