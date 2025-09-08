@@ -102,6 +102,7 @@ const Hero2 = () => {
                     autoPlay
                     loop
                     muted
+                     preload="metadata" controls
                   >
                     <source
                       src="/videos/charging.mp4"

@@ -124,6 +124,10 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Prevent unintended horizontal scroll on mobile */
+  html, body {
+    overflow-x: hidden;
+  }
   
   /* Lenis smooth scrolling styles */
   html {
