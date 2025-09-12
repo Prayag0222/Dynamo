@@ -121,7 +121,7 @@ const DesignShowcase = () => {
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 className="rounded-xl p-3"
               >
-                  <Image src={Lima1} alt="Dynamo EV Scooter" className="w-full h-full object-cover rounded-lg relative z-0" />
+                  <Image src={Lima1} alt="Dynamo EV Scooter" className="w-full h-full object-cover rounded-lg relative z-0" priority={false} loading="lazy" />
               </motion.div>
             </motion.div>
           </motion.div>
@@ -133,13 +133,13 @@ const DesignShowcase = () => {
             <div className="space-y-2 mb-12">
               {features.map((feature) => (
                 <div key={feature.id} className="bg-blue-900/20 border border-blue-500/20 rounded-lg overflow-hidden">
-                  <button onClick={() => setExpanded(expanded === feature.id ? 0 : feature.id)} className="w-full flex justify-between items-center p-5 text-left text-lg font-semibold text-gray-100">
+                  <button onClick={() => setExpanded(expanded === feature.id ? 0 : feature.id)} className="w-full flex justify-between items-center p-5 text-left text-lg font-semibold text-gray-100" aria-expanded={expanded === feature.id} aria-controls={`feature-${feature.id}`}>
                     <span>{feature.title}</span>
                     <ChevronIcon expanded={expanded === feature.id} />
                   </button>
                   <AnimatePresence initial={false}>
                     {expanded === feature.id && (
-                      <motion.div key="content" initial="collapsed" animate="open" exit="collapsed" variants={{ open: { opacity: 1, height: 'auto' }, collapsed: { opacity: 0, height: 0 } }} transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}>
+                      <motion.div key="content" id={`feature-${feature.id}`} initial="collapsed" animate="open" exit="collapsed" variants={{ open: { opacity: 1, height: 'auto' }, collapsed: { opacity: 0, height: 0 } }} transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}>
                         <p className="px-5 pb-5 text-blue-200/80">{feature.description}</p>
                       </motion.div>
                     )}
@@ -151,7 +151,7 @@ const DesignShowcase = () => {
             <div className="bg-gray-900/50 backdrop-blur-sm border border-blue-500/30 p-6 rounded-lg shadow-lg">
                 <h3 className="text-lg font-bold mb-2 text-gray-100">Visualize the Experience</h3>
                 <p className="text-blue-200/70 mb-4">Let our AI craft a unique story of your first ride on the Dynamo.EV.</p>
-                <button onClick={handleGenerateStory} disabled={isLoading} className="w-full inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-blue-600 rounded-lg shadow-md transition-all transform hover:scale-105 hover:bg-blue-500 disabled:bg-gray-600 disabled:cursor-not-allowed">
+                <button onClick={handleGenerateStory} disabled={isLoading} className="w-full inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-blue-600 rounded-lg shadow-md transition-all transform hover:scale-105 hover:bg-blue-500 disabled:bg-gray-600 disabled:cursor-not-allowed" aria-label="Generate a story about riding the Dynamo EV">
                     {isLoading ? ( <LoaderIcon className="animate-spin mr-2" /> ) : ( <span className="mr-2">⚡️</span> )}
                     {isLoading ? 'Generating...' : 'Generate a Story'}
                 </button>

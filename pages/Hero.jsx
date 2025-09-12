@@ -1,7 +1,5 @@
 'use client'
 import React from 'react'
-import Image from 'next/image'
-import heroImg from '../assets/Images/hero.webp'
 import {Playfair_Display} from 'next/font/google'
 import WrapButton from '@/components/ui/wrap-button'
 import Link from 'next/link'
@@ -14,7 +12,7 @@ const Hero = () => {
   return (
     <div>
       <div className="relative overflow-hidden object-cover w-full h-screen">
-        <Image src={heroImg} alt="Hero Image" fill className="object-cover " priority />
+        <video src="/videos/illus.mp4" autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover"></video>
 
         {/* Black overlay */}
         <div className="absolute inset-0 bg-black opacity-80 md:opacity-40"></div>
@@ -113,14 +111,14 @@ const Hero = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
         whileTap={{ scale: 0.98 }}
       >
-        <a href="/models" tabIndex={-1} className="focus:outline-none">
+        <Link href="/models" className="focus:outline-none">
           <WrapButton
             className="relative bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold px-6 py-3 rounded-2xl transition-all duration-300
               before:content-[''] before:absolute before:inset-0 before:-z-10 before:rounded-2xl before:blur-lg before:opacity-80 before:bg-gradient-to-r before:from-blue-400 before:via-cyan-400 before:to-indigo-500 hover:before:opacity-100"
           >
             Explore Now
           </WrapButton>
-        </a>
+        </Link>
       </motion.div>
 
     </div>

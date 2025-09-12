@@ -32,7 +32,7 @@ const scooterData = [
 const ScooterCard = ({ scooter, onDetailsClick, style }) => (
     <div style={style} className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-purple-500/30 hover:border-purple-500/50 hover:-translate-y-2 group">
         <div className="relative">
-            <img src={scooter.image} alt={scooter.name} className="w-full h-full object-cover" />
+            <img src={scooter.image} alt={`${scooter.name} electric scooter`} className="w-full h-full object-cover" loading="lazy" decoding="async" />
             <div className="absolute top-0 right-0 m-3 bg-slate-900 bg-opacity-70 rounded-full px-3 py-1 text-sm font-semibold">
                 ⭐ {scooter.rating}
             </div>
@@ -45,7 +45,7 @@ const ScooterCard = ({ scooter, onDetailsClick, style }) => (
             </div>
             <p className="text-white font-bold text-3xl mb-6">₹{scooter.price.toLocaleString('en-IN')}</p>
             <div className="flex">
-                <button onClick={() => onDetailsClick(scooter)} className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 rounded-xl hover:opacity-90 transition-opacity">View Details</button>
+                <button onClick={() => onDetailsClick(scooter)} className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 rounded-xl hover:opacity-90 transition-opacity" aria-label={`View details for ${scooter.name}`}>View Details</button>
             </div>
         </div>
     </div>
@@ -56,9 +56,9 @@ const ScooterModal = ({ scooter, onClose }) => {
     return (
         <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[100] p-10 transition-opacity" onClick={onClose}>
             <div className="bg-slate-900 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative border border-slate-700 shadow-2xl shadow-purple-500/20" onClick={e => e.stopPropagation()}>
-                <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-white z-10"><CloseIcon /></button>
+                <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-white z-10" aria-label="Close modal"><CloseIcon /></button>
                 <div className="grid md:grid-cols-2 h-full gap-0">
-                    <img src={scooter.image} alt={scooter.name} className="w-full h-full object-cover md:rounded-l-2xl" />
+                    <img src={scooter.image} alt={`${scooter.name} electric scooter`} className="w-full h-full object-cover md:rounded-l-2xl" loading="lazy" decoding="async" />
                     <div className="p-10">
                         <h2 className="text-4xl font-extrabold text-white mb-3">{scooter.name}</h2>
                         <div className="mb-5 text-lg font-semibold text-purple-400">⭐ {scooter.rating} / 5.0</div>
@@ -71,7 +71,7 @@ const ScooterModal = ({ scooter, onClose }) => {
                            <p className="flex justify-between"><strong>Charging Time:</strong> <span className="text-cyan-300">{scooter.chargingTime}</span></p>
                            <p className="flex justify-between"><strong>Motor:</strong> <span className="text-cyan-300">{scooter.motor}</span></p>
                         </div>
-                        <button className="w-full bg-gradient-to-r from-green-500 to-teal-500 text-white font-bold py-4 rounded-xl text-lg hover:opacity-90 transition-opacity">Buy Now</button>
+                        <button className="w-full bg-gradient-to-r from-green-500 to-teal-500 text-white font-bold py-4 rounded-xl text-lg hover:opacity-90 transition-opacity" aria-label={`Buy ${scooter.name} now`}>Buy Now</button>
                     </div>
                 </div>
             </div>

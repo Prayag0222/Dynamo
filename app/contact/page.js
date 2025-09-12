@@ -80,11 +80,11 @@ export default function Contact() {
                   </div>
                   <div className="flex items-center gap-4">
                     <PhoneIcon className="h-6 w-6 text-sky-400 flex-shrink-0" />
-                    <a href="tel:+919876543210" className="hover:text-white transition-colors duration-300">+91 98765 43210</a>
+                    <a href="tel:+919876543210" className="hover:text-white transition-colors duration-300" aria-label="Call us at +91 98765 43210">+91 98765 43210</a>
                   </div>
                   <div className="flex items-center gap-4">
                     <MailIcon className="h-6 w-6 text-sky-400 flex-shrink-0" />
-                    <a href="mailto:info@dynamoEV.com" className="hover:text-white transition-colors duration-300">info@dynamoEV.com</a>
+                    <a href="mailto:info@dynamoEV.com" className="hover:text-white transition-colors duration-300" aria-label="Email us at info@dynamoEV.com">info@dynamoEV.com</a>
                   </div>
                 </div>
               </div>
@@ -107,21 +107,21 @@ export default function Contact() {
               <form className="space-y-10">
                 {/* Floating Label Input: Name */}
                 <div className="relative">
-                  <input id="name" name="name" type="text" placeholder=" " className="block w-full px-2 py-3 text-white bg-transparent border-0 border-b-2 border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-sky-400 peer" />
+                  <input id="name" name="name" type="text" placeholder=" " className="block w-full px-2 py-3 text-white bg-transparent border-0 border-b-2 border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-sky-400 peer" aria-label="Your full name" required />
                   <label htmlFor="name" className="absolute text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-sky-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Your Full Name</label>
                 </div>
                 {/* Floating Label Input: Contact */}
                 <div className="relative">
-                  <input id="contact" name="contact" type="text" placeholder=" " className="block w-full px-2 py-3 text-white bg-transparent border-0 border-b-2 border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-sky-400 peer" />
+                  <input id="contact" name="contact" type="text" placeholder=" " className="block w-full px-2 py-3 text-white bg-transparent border-0 border-b-2 border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-sky-400 peer" aria-label="Email or phone number" required />
                   <label htmlFor="contact" className="absolute text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-sky-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email or Phone</label>
                 </div>
                 {/* Floating Label Input: Message */}
                 <div className="relative">
-                  <textarea id="message" name="message" rows="5" placeholder=" " className="block w-full px-2 py-3 text-white bg-transparent border-0 border-b-2 border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-sky-400 peer resize-none"></textarea>
+                  <textarea id="message" name="message" rows="5" placeholder=" " className="block w-full px-2 py-3 text-white bg-transparent border-0 border-b-2 border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-sky-400 peer resize-none" aria-label="Your inquiry message" required></textarea>
                   <label htmlFor="message" className="absolute text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-sky-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Your Inquiry...</label>
                 </div>
                 
-                <button type="submit" className="w-full flex items-center justify-center gap-3 bg-sky-500 text-black font-semibold py-4 px-6 rounded-lg transition-all duration-300 group transform hover:scale-105 hover:bg-sky-400 hover:shadow-2xl hover:shadow-sky-500/30">
+                <button type="submit" className="w-full flex items-center justify-center gap-3 bg-sky-500 text-black font-semibold py-4 px-6 rounded-lg transition-all duration-300 group transform hover:scale-105 hover:bg-sky-400 hover:shadow-2xl hover:shadow-sky-500/30" aria-label="Submit your inquiry">
                   Submit Inquiry
                   <ArrowRightIcon className="h-5 w-5 transform transition-transform duration-300 group-hover:translate-x-1.5" />
                 </button>

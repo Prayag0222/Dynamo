@@ -16,17 +16,19 @@ const FooterLink = ({ children, href }) => (
   <a
     href={href || '#'}
     className="text-gray-400 hover:text-white transition-colors duration-300 ease-in-out"
+    aria-label={typeof children === 'string' ? children : 'Footer link'}
   >
     {children}
   </a>
 );
 
-const SocialIcon = ({ icon: Icon, href }) => (
+const SocialIcon = ({ icon: Icon, href, label }) => (
   <motion.a
     href={href || '#'}
     whileHover={{ scale: 1.2, rotate: 5 }}
     whileTap={{ scale: 0.9 }}
     className="text-gray-400 hover:text-emerald-400 transition-colors duration-300"
+    aria-label={label || 'Social media link'}
   >
     <Icon className="h-6 w-6" />
   </motion.a>
@@ -75,10 +77,10 @@ export default function Footer() {
   const quickLinks = ['Models', 'Test Ride', 'About Us', 'Careers', 'Contact'];
   const supportLinks = ['FAQs', 'Find a Dealer', 'Warranty', 'Service Booking'];
   const socialLinks = [
-    { icon: Facebook, href: '#' },
-    { icon: Twitter, href: '#' },
-    { icon: Instagram, href: '#' },
-    { icon: Linkedin, href: '#' },
+    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Twitter, href: '#', label: 'Twitter' },
+    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Linkedin, href: '#', label: 'LinkedIn' },
   ];
 
   return (
@@ -100,7 +102,7 @@ export default function Footer() {
               </p>
               <div className="flex space-x-4 mt-4">
                 {socialLinks.map((social, index) => (
-                  <SocialIcon key={index} icon={social.icon} href={social.href} />
+                  <SocialIcon key={index} icon={social.icon} href={social.href} label={social.label} />
                 ))}
               </div>
             </motion.div>

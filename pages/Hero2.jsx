@@ -47,8 +47,10 @@ const Hero2 = () => {
           <div className="absolute inset-0 -z-10">
             <img
               src={heroImg.src ? heroImg.src : heroImg}
-              alt="Background"
+              alt=""
               className="h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
               style={{ objectFit: "cover", width: "100%", height: "100%" }}
             />
             <div className="absolute inset-0 bg-black/50" />
@@ -102,7 +104,8 @@ const Hero2 = () => {
                     autoPlay
                     loop
                     muted
-                     preload="metadata" controls
+                    playsInline
+                    preload="metadata" 
                   >
                     <source
                       src="/videos/charging.mp4"
@@ -146,6 +149,8 @@ const Hero2 = () => {
                     autoPlay
                     loop
                     muted
+                    playsInline
+                    preload='metadata'
                   >
                     <source
                       src="/videos/battery.mp4"
@@ -188,6 +193,8 @@ const Hero2 = () => {
                     autoPlay
                     loop
                     muted
+                    playsInline
+                    preload='metadata'
                   >
                     <source
                       src="/videos/ride1.mp4"
@@ -229,6 +236,7 @@ const Hero2 = () => {
                     autoPlay
                     loop
                     muted
+                    playsInline
                   >
                     <source
                       src="/videos/scooter.mp4"

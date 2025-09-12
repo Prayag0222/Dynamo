@@ -8,6 +8,7 @@ const WrapButton = ({
   className,
   children,
   href,
+  ...props
 }) => {
   return (
     <div className="flex items-center justify-center">
@@ -17,7 +18,8 @@ const WrapButton = ({
             className={cn(
               "group cursor-pointer border group border-[#3B3A3A] bg-[#151515] gap-2  h-[64px] flex items-center p-[11px] rounded-full",
               className
-            )}>
+            )}
+            {...props}>
             <div
               className="border border-[#3B3A3A] bg-[#ff3f17]  h-[43px] rounded-full flex items-center justify-center text-white">
               <p
@@ -36,7 +38,8 @@ const WrapButton = ({
           className={cn(
             "group cursor-pointer border group border-[#7a7a7a] bg-transparent gap-2  h-[80px] flex items-center p-[11px] rounded-full",
             className
-          )}>
+          )}
+          {...props}>
           <div
             className="border border-gray-400 p-3 bg-[#20202196]  h-[53px] rounded-full flex items-center justify-center text-white">
             <Globe className="animate-spin mx-3"></Globe>

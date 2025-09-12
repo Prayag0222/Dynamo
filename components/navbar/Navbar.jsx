@@ -65,7 +65,7 @@ className='flex flex-col items-center gap-2'>
 
 
 {/* Button */}
-<a href="/contact"  tabIndex={-1} className="focus:outline-none" >
+<Link href="/contact" className="focus:outline-none" >
 <motion.button 
 initial={{opacity:0,y:0}}
 animate={{opacity:1,y:0}}
@@ -74,7 +74,7 @@ transition={{duration:3,ease:"easeInOut"}}
 className="hidden md:inline-flex border-2 text-xl justify-center items-center text-black bg-white px-4 py-2 rounded-md shadow hover:scale-110 transition-all ease-in-out cursor-pointer h-11">
 Book Test Ride
 </motion.button>
-</a>
+</Link>
 {/* Mobile hamburger */}
 <button
   aria-label="Toggle Menu"
